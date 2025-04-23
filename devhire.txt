@@ -1,0 +1,53 @@
+-- Users: both candidates and companies
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role TEXT CHECK(role IN ('candidate','company')) NOT NULL,
+    name TEXT NOT NULL,
+    email TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    contact TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Candidate CV details
+CREATE TABLE cvs (
+    user_id INTEGER PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    phone TEXT,
+    address TEXT,
+    city TEXT,
+    education TEXT,
+    experience TEXT,
+    skills TEXT,
+    languages TEXT,
+    objective TEXT,
+    achievements TEXT,
+    availability TEXT,
+    linkedin TEXT,
+    reference_contacts TEXT, -- <-- Cambiado aquí
+    photo_path TEXT,
+    pdf_path TEXT,
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- Job postings
+CREATE TABLE jobs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    company_id INTEGER,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    requirements TEXT,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(company_id) REFERENCES users(id)
+);
+
+-- Applications
+CREATE TABLE applications (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    job_id INTEGER,
+    candidate_id INTEGER,
+    applied_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(job_id) REFERENCES jobs(id),
+    FOREIGN KEY(candidate_id) REFERENCES users(id)
+);
