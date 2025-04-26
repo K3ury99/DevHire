@@ -16,7 +16,12 @@
 # ☕ Participants
 - Keury R. 🍃  
 - Virtor R. 🌋  
-- Erick R. 👾  
+- Erick R. 👾
+
+# 📽 Explanatory video in Teams
+```bash
+https://itlaedudo-my.sharepoint.com/:v:/g/personal/20231101_itla_edu_do/EfjjhxsTW9lEqfMKDnVRxqUB1qQp8paYOPDxU0IZPRHVjQ?e=QbDTPm&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+```
 
 # 🐱‍👤 Contributing
 1. **Fork the repo**
